@@ -1,0 +1,17 @@
+.infinite_invert {
+    cursor: pointer;
+    animation: weird-animation 1s infinite ease-in-out;
+}
+
+@keyframes weird-animation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(180deg) drop-shadow(0 0 50px #e600ff);
+        transform: scale(3);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
