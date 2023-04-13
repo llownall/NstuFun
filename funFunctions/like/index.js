@@ -4,6 +4,9 @@ export function makeLikeable(element){
   element.addEventListener("click", (event) => {
     drawHeart(event.target)
   });
+  element.addEventListener("touchstart", (event) => {
+    drawHeart(event.target)
+  });
   element.style.cursor = 'pointer'
 
 }
