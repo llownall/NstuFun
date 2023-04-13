@@ -1,46 +1,21 @@
 import './style.css'
-import {infiniteInvert} from "./funFunctions/invert/index.js";
-import {makeRainbow} from "./funFunctions/rainbow/index.js";
+import {makeLikeable} from "./funFunctions/like/index.js";
 
 function makeFun(config) {
-    const {
-        portrait,
-        background,
-    } = config
+  const {
+    portrait,
+  } = config
 
-    const portraitEl = document.querySelector(portrait)
-    const backgroundEl = document.querySelector(background)
+  const portraitEl = document.querySelector(portrait)
 
-    infiniteInvert(
-        makeCallbacks({
-            targetEl: portraitEl,
-            eventStart: 'mouseover',
-            eventStop: 'mouseleave',
-        })
-    )
+  let i
+  var x = document.body.getElementsByTagName("*")
+  for (i = 0; i < x.length; i++) {
+    var y = (Math.random() - 0.5)
+    x[i].style.transform = "rotate(" + y + "deg)"
+  }
 
-    makeRainbow(
-        makeCallbacks({
-            targetEl: portraitEl,
-            eventStart: 'mouseover',
-            eventStop: 'mouseleave',
-            callbackEl: backgroundEl,
-        })
-    )
-}
-
-function makeCallbacks(options) {
-    const {
-        targetEl,
-        eventStart,
-        eventStop,
-        callbackEl = targetEl,
-    } = options
-
-    return {
-        activateCallback: cb => targetEl.addEventListener(eventStart, () => cb(callbackEl)),
-        deactivateCallback: cb => targetEl.addEventListener(eventStop, () => cb(callbackEl)),
-    }
+  makeLikeable(portraitEl)
 }
 
 window.makeFun = makeFun
