@@ -12,10 +12,12 @@ export function makeLikeable(element){
 }
 function drawHeart(element){
   const a = document.createElement('span')
+  const {x,width} = element.getBoundingClientRect()
   a.innerHTML = '&#10084;'
-  a.style.left = Math.random() * 100 +'%'
+  const initX = x + Math.random()*width
+  a.style.left = `${initX}px`
   a.classList.add('heart')
-  element.parentElement.append(a)
+  element.parentElement.appendChild(a)
   setTimeout(()=>{
     element.parentElement.removeChild(a)
   }, 1000)

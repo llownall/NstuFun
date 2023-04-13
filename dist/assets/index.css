@@ -1,1 +1,1 @@
-.heart{color:red;position:absolute;font-size:72px;user-select:none;animation:weird-animation 1s infinite ease-in-out}@keyframes weird-animation{0%{bottom:0;transform:scale(1)}80%{opacity:80%}to{bottom:100px;transform:scale(2);opacity:0}}
+.heart{color:red;position:absolute;user-select:none;transform:translate(-50%);animation:weird-animation 1s infinite ease-in-out}@keyframes weird-animation{0%{bottom:0;font-size:36px}80%{opacity:80%}to{bottom:100px;font-size:108px;opacity:0}}
