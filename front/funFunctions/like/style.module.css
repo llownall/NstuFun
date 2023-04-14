@@ -1,0 +1,28 @@
+.heart {
+    position: absolute;
+    transform: translateX(-50%);
+
+    color: red;
+    opacity: 0;
+
+    user-select: none;
+    pointer-events: none;
+
+    animation: weird-animation 1s ease-in-out;
+}
+
+@keyframes weird-animation {
+    0% {
+        bottom: 25px;
+        font-size: 36px;
+        opacity: 1;
+    }
+    70% {
+        opacity: .8;
+    }
+    100% {
+        bottom: 100px;
+        font-size: 108px;
+        opacity: 0;
+    }
+}
