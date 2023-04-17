@@ -17,4 +17,4 @@ def increase():
     return ''
 
 
-app.run(host='0.0.0.0', port=5009)
+app.run(host='0.0.0.0', port=5009, ssl_context='adhoc')
