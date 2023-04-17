@@ -1,8 +1,9 @@
 import classes from './style.module.css'
 
-export function makeLikeable(element) {
+export function makeLikeable(element, onClick) {
     element.addEventListener('click', (event) => {
         drawHeart(event.target)
+        onClick()
     });
     element.style.cursor = 'pointer'
 }
