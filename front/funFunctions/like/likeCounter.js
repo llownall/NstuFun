@@ -17,7 +17,13 @@ function counterElement() {
 
   function setCount(newCount){
     count = newCount
-    el.innerHTML = `${count} отметки "Нравится"`
+    const last_digit = count % 10
+    let ending
+    if ([1].includes(last_digit)) {ending = 'отметка'}
+    else if ([2,3,4].includes(last_digit)) {ending = 'отметки'}
+    else {ending = 'отметок'}
+
+    el.innerHTML = `${count} ${ending} "Нравится"`
   }
 
   function increaseCount() {
@@ -39,5 +45,4 @@ async function getFromServer() {
 
 function increaseOnServer(){
   fetch(`${import.meta.env.VITE_BACKEND_URL}/increase`)
-  console.log('send')
 }
