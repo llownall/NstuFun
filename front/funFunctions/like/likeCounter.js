@@ -12,6 +12,7 @@ export function createCounter(element) {
 function counterElement() {
 
   const el = document.createElement('div')
+  el.style.marginTop = '8px'
   let count
   getFromServer().then(x => setCount(x))
 

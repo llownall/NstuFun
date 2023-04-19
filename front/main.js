@@ -14,11 +14,11 @@ function makeFun(config) {
   
   placeBorder(portraitEl)
   
-  window.onload = () => {
-    const {increaseCount} = createCounter(portraitEl.parentElement)
 
-    makeLikeable(portraitEl, increaseCount)
-  }
+  const {increaseCount} = createCounter(portraitEl.parentElement)
+
+  makeLikeable(portraitEl, increaseCount)
+
 }
 
 window.makeFun = makeFun
