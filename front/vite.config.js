@@ -9,7 +9,7 @@ export default defineConfig(({command, mode, ssrBuild}) => {
             rollupOptions: {
                 output: {
                     entryFileNames: 'assets/[name].js',
-                    assetFileNames: 'assets/[name].css',
+                    assetFileNames: 'assets/[name].[ext]',
                 }
             },
         },
