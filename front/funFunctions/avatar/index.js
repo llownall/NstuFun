@@ -8,6 +8,8 @@ export function placeBorder(portraitEl){
   border.src = new URL('../../assets/13.png', import.meta.url).href
   border.style.width = 'unset'
   border.style.position = 'absolute'
+  border.style.userSelect = 'none'
+  border.style.pointerEvents = 'none'
   onResize()
 
   window.addEventListener('resize', onResize)
